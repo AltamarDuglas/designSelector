@@ -1,23 +1,87 @@
-# Registro de Cambios y Arquitectura
+# Cambios Técnicos - Sublimación App
 
-Este documento detalla las mejoras técnicas implementadas en la aplicación de personalización.
+## Versión 2.0.0 - Reestructuración Multi-Página
 
-## Mejoras Recientes
+### Arquitectura
+- **Migración a React Router**: Implementación de navegación multi-página
+- **Separación de responsabilidades**: Diseñador ahora es una página independiente
+- **Estructura modular**: Componentes organizados por funcionalidad
 
-### Sistema Métrico (Centímetros)
-Se ha implementado una escala de conversión real. El lienzo de trabajo representa un ancho físico de **50 cm**, permitiendo que todos los cálculos de posición y tamaño se traduzcan a medidas métricas reales necesarias para el proceso de impresión.
+### Nuevas Páginas
+- `/` - Página de inicio
+- `/tienda` - Catálogo de productos (placeholder)
+- `/disenador` - Herramienta de diseño de camisetas
 
-### Cuadrícula de Precisión Dinámica
-La cuadrícula ahora está calibrada por centímetros:
-- **Líneas finas**: Cada 1 cm.
-- **Líneas de referencia**: Cada 5 cm.
-- **Comportamiento**: La cuadrícula permanece tenue para no estorbar la visualización y se resalta automáticamente cuando el usuario comienza a manipular un diseño, facilitando la alineación técnica.
+### Componentes de Navegación
+- **Header**: Barra de navegación sticky con links a todas las páginas
+- Diseño mobile-first con tipografía responsive
+- Gradientes en logo para identidad visual
 
-### Máscaras de Recorte Dinámicas
-Se utiliza la propiedad `mask-image` de CSS para proyectar el diseño únicamente sobre la silueta de la prenda activa. Esta funcionalidad es compatible tanto con modelos fijos como con camisetas personalizadas subidas por el usuario.
+### Optimizaciones Móviles
+- Header optimizado para pantallas pequeñas
+- Uso de `clamp()` para escalado fluido de texto
+- Touch-friendly: Botones con tamaño mínimo adecuado
+- Compatible con Capacitor para apps nativas
 
-## Estructura del Proyecto
+## Versión 1.5.0 - Exportación PDF
 
-- `src/componentes/CanvasCamiseta.tsx`: Motor principal de previsualización y lógica de arrastre.
-- `src/utilidades/constantes.ts`: Configuración central de límites, escalas y parámetros métricos.
-- `src/tipos/index.ts`: Definiciones de datos para asegurar la integridad de la información en toda la aplicación.
+### Funcionalidad
+- **Generación de PDFs profesionales** con jsPDF y html2canvas
+- Captura del diseño con cuadrícula de referencia visible
+- Especificaciones técnicas incluidas (modelo, dimensiones, posición)
+
+### Implementación
+- Clonado del DOM para captura limpia sin afectar UI
+- Reset temporal de zoom para evitar distorsiones
+- Forzado de visibilidad de cuadrícula en el reporte
+- Layout responsive del PDF con espaciado dinámico
+
+### Correcciones
+- Aspect ratio 3:4 forzado para evitar imágenes estiradas
+- Cuadrícula con opacidad optimizada (0.5) para visibilidad
+- Separación de eventos de teclado y wheel para zoom selectivo
+
+## Versión 1.0.0 - Diseñador Base
+
+### Características Principales
+- Canvas interactivo con drag & drop
+- Sistema de zoom con Ctrl + scroll
+- Gestos táctiles avanzados (pellizco para escalar/zoom)
+- Cuadrícula de referencia métrica
+- Panel de controles con pestañas móviles
+
+### Sistema Métrico
+- Base: 50cm de ancho del lienzo
+- Conversión automática de porcentajes a centímetros
+- Indicadores flotantes durante arrastre
+- Límites de área de impresión configurables
+
+### Gestión de Estado
+- React hooks (useState, useEffect, useRef)
+- Refs para evitar stale closures en event listeners
+- Separación de modos de pellizco (zoom vs escala)
+
+### Optimizaciones
+- `isolation: isolate` en canvas para contener zoom
+- Event listeners condicionales (solo en canvas para wheel)
+- Lazy loading de imágenes
+- Will-change para animaciones suaves
+
+## Tecnologías Utilizadas
+
+- **React 18.3**: Framework principal
+- **TypeScript 5.6**: Tipado estático
+- **Vite 6.0**: Build tool
+- **React Router 7.1**: Navegación
+- **jsPDF 2.5**: Generación de PDFs
+- **html2canvas 1.4**: Captura de DOM
+
+## Próximas Mejoras
+
+- [ ] Implementar catálogo de productos en `/tienda`
+- [ ] Sistema de autenticación de usuarios
+- [ ] Guardado de diseños en localStorage/backend
+- [ ] Galería de diseños prediseñados
+- [ ] Integración con servicios de impresión
+- [ ] Modo oscuro/claro
+- [ ] Internacionalización (i18n)

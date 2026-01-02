@@ -1,32 +1,154 @@
-# Guía de Uso - Sistema de Sublimación
+# Manual de Usuario - Sublimación App
 
-Bienvenido al manual de usuario. Esta aplicación ha sido diseñada para facilitar la personalización y preparación de prendas para impresión por sublimación.
+## Bienvenido 👋
 
-## Funciones Principales
+Esta aplicación te permite diseñar camisetas personalizadas de forma sencilla y profesional. Visualiza tu diseño en tiempo real, ajusta dimensiones con precisión y exporta reportes técnicos para el proceso de sublimación.
 
-### 1. Selección de Prenda
-En el panel lateral puede elegir entre los modelos predefinidos (Camiseta Blanca o Negra) o utilizar la opción **Personalizada** para subir su propia imagen base en formato PNG. Esto es ideal si trabaja con modelos de prendas específicos.
+## Navegación
 
-### 2. Carga de Diseño
-Puede subir su diseño decorativo (también en formato PNG) mediante el botón correspondiente. Una vez cargado, el diseño aparecerá sobre la prenda.
+### Páginas Principales
 
-### 3. Ajuste y Medidas de Precisión
-- **Posicionamiento**: Arrastre el diseño con el mouse para ubicarlo. Al hacerlo, se activará una cuadrícula técnica y aparecerá un recuadro con las medidas exactas en centímetros.
-- **Escala**: Utilice los controles de tamaño para ajustar las dimensiones del diseño. Las medidas se actualizarán en tiempo real para asegurar que el resultado final coincida con sus necesidades físicas.
+- **Inicio** (`/`): Página principal de la aplicación
+- **Tienda** (`/tienda`): Explora productos disponibles
+- **Diseñador** (`/disenador`): Crea y personaliza tus diseños
 
-### 4. Zoom y Navegación Dinámica
-Para inspeccionar detalles minuciosos, la aplicación ofrece múltiples métodos de control de zoom:
-- **Panel Lateral**: Utilice el control deslizante o los botones (+) y (-) para ajustes manuales.
-- **Teclado**: Mantenga presionada la tecla **Ctrl** y use las teclas **+** para acercar y **-** para alejar. **Ctrl + 0** restaura la vista al 100%.
-- **Mouse**: Mantenga presionada la tecla **Ctrl** y utilice la rueda del mouse para un zoom fluido.
-- **Gestos Táctiles**: En dispositivos móviles o tablets, puede utilizar el gesto de "pellizco" con dos dedos directamente sobre la prenda para ampliar o reducir la vista.
+Usa el menú superior para navegar entre páginas.
 
-Al aumentar el zoom, puede navegar por el área de trabajo utilizando las barras de desplazamiento si el lienzo excede el tamaño de la pantalla.
+## Diseñar una Camiseta
 
+### 1. Seleccionar el Modelo
 
-### 5. Recorte Automático
-No se preocupe por si el diseño se sale de la prenda. El sistema aplica un recorte dinámico que asegura que la imagen solo sea visible sobre la superficie de la camiseta, dándole una previsualización real del producto terminado.
+En la pestaña **👕 Prenda**:
 
-## Consejos para Impresión
-- La cuadrícula tiene líneas principales cada **5 centímetros**, lo que ayuda a centrar y alinear el diseño perfectamente.
-- Recomendamos usar imágenes PNG con fondo transparente para obtener resultados óptimos.
+- Elige entre los modelos predefinidos (Blanca, Negra)
+- O sube tu propia imagen de camiseta (formato PNG recomendado)
+
+### 2. Subir tu Diseño
+
+En la pestaña **🎨 Diseño**:
+
+1. Haz clic en **"Seleccionar archivo"** o arrastra tu imagen
+2. Formatos aceptados: PNG, JPG, JPEG, SVG
+3. Tamaño máximo: 10MB
+
+### 3. Ajustar Tamaño
+
+Usa el slider **"Tamaño del diseño"** para redimensionar:
+- Mínimo: 10% (muy pequeño)
+- Máximo: 300% (muy grande)
+- Las dimensiones en centímetros se muestran en tiempo real
+
+### 4. Posicionar el Diseño
+
+**En computadora:**
+- Haz clic y arrastra la imagen a la posición deseada
+- Verás las coordenadas en centímetros mientras arrastras
+
+**En móvil/tablet:**
+- Toca y arrastra con un dedo para mover
+- Pellizca sobre la imagen con dos dedos para redimensionar
+
+### 5. Ajustar la Vista
+
+En la pestaña **🔍 Vista**:
+
+**Zoom del Lienzo:**
+- Usa el slider para acercar/alejar la vista
+- O usa `Ctrl + Scroll` del mouse (solo sobre el canvas)
+- Atajos de teclado:
+  - `Ctrl + +` → Acercar
+  - `Ctrl + -` → Alejar
+  - `Ctrl + 0` → Resetear al 100%
+
+### 6. Exportar a PDF
+
+Cuando estés satisfecho con tu diseño:
+
+1. Ve a la pestaña **🔍 Vista**
+2. Haz clic en **"📑 Exportar PDF"**
+3. El archivo se descargará automáticamente
+
+El PDF incluye:
+- Imagen del diseño final sobre la camiseta
+- Cuadrícula de referencia (líneas cada 1cm y 5cm)
+- Especificaciones técnicas:
+  - Modelo de camiseta
+  - Dimensiones del diseño (ancho x alto en cm)
+  - Posición (coordenadas X, Y en cm)
+- Fecha de generación
+
+## Gestos Táctiles (Móvil)
+
+### Sobre el Diseño
+- **Un dedo**: Arrastra para mover
+- **Dos dedos (pellizco)**: Redimensiona la imagen
+
+### Sobre el Fondo del Canvas
+- **Dos dedos (pellizco)**: Zoom del lienzo completo
+
+### Sobre los Controles
+- **Toca el diseño**: Oculta los controles para mejor visualización
+- **Toca el fondo**: Muestra los controles nuevamente
+
+## Cuadrícula de Referencia
+
+La cuadrícula te ayuda a posicionar con precisión:
+
+- **Líneas finas**: Cada 1 centímetro
+- **Líneas gruesas**: Cada 5 centímetros
+- Base: 50cm de ancho total del lienzo
+
+La cuadrícula se activa automáticamente al arrastrar y aparece en el PDF exportado.
+
+## Consejos y Buenas Prácticas
+
+### Para Mejores Resultados
+
+1. **Usa imágenes de alta resolución** (mínimo 300 DPI)
+2. **Formato PNG con fondo transparente** para diseños sin fondo
+3. **Verifica las dimensiones** antes de exportar
+4. **Guarda el PDF** como referencia para el proceso de sublimación
+
+### Limitaciones
+
+- El diseño debe estar dentro del **área de impresión** (zona central de la camiseta)
+- Si intentas mover el diseño fuera, se limitará automáticamente
+- Tamaño de archivo máximo: 10MB
+
+## Solución de Problemas
+
+### La imagen no se carga
+- Verifica que el formato sea compatible (PNG, JPG, JPEG, SVG)
+- Asegúrate de que el archivo no exceda 10MB
+- Intenta con otra imagen
+
+### El zoom no funciona
+- Asegúrate de mantener presionada la tecla `Ctrl`
+- En móvil, usa el pellizco con dos dedos sobre el fondo del canvas
+- Verifica que el cursor esté sobre el área del diseñador
+
+### El PDF se ve distorsionado
+- Espera a que la imagen cargue completamente antes de exportar
+- Intenta resetear el zoom a 100% antes de exportar
+- Si persiste, recarga la página e intenta nuevamente
+
+## Atajos de Teclado
+
+| Atajo | Acción |
+|-------|--------|
+| `Ctrl + +` | Aumentar zoom |
+| `Ctrl + -` | Disminuir zoom |
+| `Ctrl + 0` | Resetear zoom |
+| `Ctrl + Scroll` | Zoom con rueda del mouse |
+
+## Soporte
+
+¿Tienes preguntas o encontraste un problema?
+
+- Revisa la documentación técnica en `/documentacion`
+- Reporta issues en GitHub
+- Contacta al desarrollador
+
+---
+
+**¡Disfruta diseñando tus camisetas! 🎨👕**
