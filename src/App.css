@@ -1,0 +1,175 @@
+/* ESTILOS - APLICACIÓN PRINCIPAL */
+
+.app-sublimacion {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.titulo-app {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitulo-app {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: var(--espacio-xs) 0 0 0;
+}
+
+.contenido-principal {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Panel de Controles - Móvil */
+.panel-controles {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--glass-border);
+  z-index: 100;
+  max-height: 45vh;
+  /* Ocupar casi media pantalla en móvil */
+}
+
+.contenido-scroll-panel {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--espacio-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-md);
+}
+
+/* Tabs de Navegación Móvil */
+.tabs-movil {
+  display: flex;
+  background: rgba(0, 0, 0, 0.2);
+  padding: var(--espacio-xs);
+  gap: var(--espacio-xs);
+}
+
+.tab-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  padding: var(--espacio-md);
+  border-radius: var(--radio-sm);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all var(--transicion-rapida);
+  cursor: pointer;
+}
+
+.tab-btn.activo {
+  background: var(--color-primario);
+  color: white;
+  box-shadow: var(--sombra-sm);
+}
+
+/* Visibilidad de Secciones en Móvil */
+.seccion-panel {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.seccion-panel.activa {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.panel-controles::-webkit-scrollbar-thumb {
+  background: var(--glass-border);
+  border-radius: 3px;
+}
+
+.grupo-subida {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-md);
+  margin-top: var(--espacio-sm);
+}
+
+.subida-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+}
+
+.titulo-control {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Responsive - Tablet y Desktop */
+@media (min-width: 768px) {
+  .app-sublimacion {
+    flex-direction: row;
+  }
+
+  .tabs-movil {
+    display: none;
+  }
+
+  .seccion-panel {
+    display: block !important;
+    /* Forzar visibilidad en desktop */
+    animation: none;
+    margin-bottom: var(--espacio-lg);
+    /* Espacio entre secciones */
+  }
+
+  .header-app {
+    position: absolute;
+    top: var(--espacio-md);
+    left: var(--espacio-md);
+    z-index: 100;
+  }
+
+  .contenido-principal {
+    flex: 1;
+  }
+
+  .panel-controles {
+    width: 320px;
+    max-height: 100%;
+    border-left: 1px solid var(--glass-border);
+    border-top: none;
+    background: transparent;
+    padding: 0;
+    /* El padding lo maneja el contenido-scroll-panel */
+  }
+
+  .contenido-scroll-panel {
+    padding: var(--espacio-lg);
+  }
+}

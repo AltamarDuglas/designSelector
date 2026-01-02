@@ -1,0 +1,102 @@
+/* ESTILOS - CONTROLES DE ZOOM */
+
+.controles-zoom {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-sm);
+    padding: var(--espacio-md);
+    border-radius: var(--radio-md);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.info-zoom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.etiqueta-zoom {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+}
+
+.valor-zoom {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-primario);
+}
+
+.botones-zoom {
+    display: flex;
+    align-items: center;
+    gap: var(--espacio-sm);
+}
+
+.boton-zoom {
+    width: 44px;
+    /* Tamaño touch-friendly */
+    height: 44px;
+    border-radius: var(--radio-sm);
+    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transicion-rapida);
+}
+
+.boton-zoom:hover:not(:disabled) {
+    background: rgba(99, 102, 241, 0.2);
+    border-color: var(--color-primario);
+}
+
+.boton-zoom:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.slider-zoom {
+    flex: 1;
+    height: 6px;
+    /* Más grueso para facilitar toque */
+    -webkit-appearance: none;
+    appearance: none;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    outline: none;
+}
+
+.slider-zoom::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 24px;
+    /* Thumb más grande */
+    height: 24px;
+    border-radius: 50%;
+    background: var(--color-primario);
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+    border: 2px solid white;
+    /* Borde para mejor visibilidad */
+}
+
+.boton-reset-zoom {
+    padding: 6px;
+    font-size: 0.75rem;
+    background: transparent;
+    border: 1px solid var(--glass-border);
+    color: rgba(255, 255, 255, 0.5);
+    border-radius: var(--radio-sm);
+    cursor: pointer;
+    transition: all var(--transicion-rapida);
+}
+
+.boton-reset-zoom:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.3);
+}

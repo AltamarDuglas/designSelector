@@ -1,0 +1,70 @@
+/* ESTILOS - SELECTOR DE MODELO */
+
+.selector-modelo {
+    padding: var(--espacio-md);
+}
+
+.titulo-selector {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: var(--espacio-md);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.grid-modelos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--espacio-md);
+}
+
+.tarjeta-modelo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-sm);
+    padding: var(--espacio-sm);
+    cursor: pointer;
+    transition: all var(--transicion-normal);
+    text-align: center;
+}
+
+.tarjeta-modelo.activo {
+    background: linear-gradient(135deg,
+            rgba(99, 102, 241, 0.3),
+            rgba(139, 92, 246, 0.3));
+    border-color: var(--color-primario);
+    transform: scale(1.05);
+}
+
+.preview-modelo {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: var(--radio-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all var(--transicion-normal);
+}
+
+.imagen-modelo {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.nombre-modelo {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Hover effects */
+.tarjeta-modelo:hover:not(.activo) {
+    transform: translateY(-4px);
+}
+
+.tarjeta-modelo:active {
+    transform: scale(0.98);
+}
